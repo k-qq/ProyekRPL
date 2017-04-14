@@ -1,4 +1,4 @@
-Functional Requirement
+Functional Requirement :
 - Sistem harus bisa mengecek username dan password yang diinput oleh user
 - Sistem harus bisa menampilkan kamar
 - Sistem bisa menambah kamar dari input admin
@@ -11,7 +11,7 @@ Functional Requirement
 - Pengunjung bisa membuat akun baru
 - Pengunjung bisa melakukan login untuk reservasi kamar
 
-Non-Functional Requirement
+Non-Functional Requirement :
 - Sistem maksimal down selama 2x24 jam
 - Sistem tersedia dalam 1 bahasa
 - Sistem harus bisa diakses maksimal 100 orang dalam waktu yang sama
