@@ -1,0 +1,19 @@
+Functional Requirement :
+- Sistem harus bisa mengecek username dan password yang diinput oleh user
+- Sistem harus bisa menampilkan kamar
+- Sistem bisa menambah kamar dari input admin
+- Sistem bisa menghapus kamar 
+- Sistem bisa mengupdate detail kamar
+- Sistem bisa menampilkan status kamar
+- Sistem bisa mengubah jumlah kamar yang tersedia
+- Sistem bisa menambah dan mengurangi ketersediaan kamar
+
+- Pengunjung bisa membuat akun baru
+- Pengunjung bisa melakukan login untuk reservasi kamar
+
+Non-Functional Requirement :
+- Sistem maksimal down selama 2x24 jam
+- Sistem tersedia dalam 1 bahasa
+- Sistem harus bisa diakses maksimal 100 orang dalam waktu yang sama
+- Tampilan sistem harus responsive
+- Sistem harus selalu terhubung ke database
