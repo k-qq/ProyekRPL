@@ -51,28 +51,21 @@ if( isset($_SESSION['user_id']) ){
                     <!-- header -->
                     <header>
                         <h1><a href="index.php" id="logo">Kusuma Kartikasari Hotel</a></h1>
-
                         <?php if( !empty($user) ): ?>
+                        <div class="sukses">
+                            <br />Welcome <?= $user['email']; ?>
+                                <a href="order.php" style="text-decoration:none"><h4>Pesanan Saya</h4>
+                                <a href="signout.php" style="text-decoration:none">Sign out?</a>
+                                </a>
+                        </div>
+                        <?php else: ?>
 
-                
-                           
-                             <div id="sukses" class="department"> 
-                              <br />Welcome
-                        <?= $user['email']; ?>
-                            You are successfully logged in!
-                             <a href="signout.php">Logout?</a>
-                             </div>
-                            
-                            
+                        <div class="department"> <a href="sign.php" style="text-decoration:none">Sign in</a> | <a href="signup.php" style="text-decoration:none">Sign up</a></div>
 
-                            <?php else: ?>
-
-                            <div class="department"> <a href="sign.php" style="text-decoration:none">Sign in</a> | <a href="signup.php" style="text-decoration:none">Sign up</a></div>
-
-                            <?php endif; ?>
+                        <?php endif; ?>
 
 
-<!--                            <div class="department"> <a href="sign.php" style="text-decoration:none">Sign in</a> | <a href="signup.php" style="text-decoration:none">Sign up</a></div>-->
+                        <!--                            <div class="department"> <a href="sign.php" style="text-decoration:none">Sign in</a> | <a href="signup.php" style="text-decoration:none">Sign up</a></div>-->
                     </header>
                     <div class="box">
                         <nav>
@@ -81,7 +74,7 @@ if( isset($_SESSION['user_id']) ){
                                 <li><a href="services.php">Facilities</a></li>
                                 <li><a href="rooms.php">Rooms</a></li>
                                 <li><a href="package.php">Package</a></li>
-                                <li><a href="locations.php">Contact</a></li>
+                                <li><a href="contact.php">Contact</a></li>
                             </ul>
                         </nav>
                         <!-- header end -->

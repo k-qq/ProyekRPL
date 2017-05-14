@@ -3,7 +3,6 @@
 session_start();
 
 if( isset($_SESSION['user_id']) ){
-    echo"a";
 	header("Location: index.php");
 }
 
@@ -12,30 +11,19 @@ require 'database.php';
 if(!empty($_POST['email']) && !empty($_POST['password'])):
 	
 	$records = $conn->prepare('SELECT id,email,password FROM login WHERE email = :email');
-echo"0";
 	$records->bindParam(':email', $_POST['email']);
-echo"1";
 	$records->execute();
-echo"2";
 	$results = $records->fetch(PDO::FETCH_ASSOC);
-echo"3";
-
 	$message = '';
-echo"4";
-echo count($results); 
-echo $results['password'];
-//	if(count($results) > 0 && password_verify($_POST['password'], $results['password']) ){
-	if(count($results) > 0 && ($_POST['password'] = $results['password']) ){
 
-echo"5";
+echo $results['password'];
+	if(count($results) > 0 && password_verify($_POST['password'], $results['password']) ){
+//	if(count($results) > 0 && ($_POST['password'] = $results['password']) ){
 		$_SESSION['user_id'] = $results['id'];
         echo"6";
 		header("Location: index.php");
-echo"7";
 	} else {
-        echo"8";
 		$message = 'Sorry, those credentials do not match';
-        echo"9";
 	}
 
 endif;

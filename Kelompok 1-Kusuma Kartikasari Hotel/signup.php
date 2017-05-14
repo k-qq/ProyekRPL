@@ -3,7 +3,7 @@
 session_start();
 
 if( isset($_SESSION['user_id']) ){
-	header("Location: /");
+	header("Location: index.php");
 }
 
 require 'database.php';
@@ -17,9 +17,9 @@ if(!empty($_POST['email']) && !empty($_POST['password'])):
 	$stmt = $conn->prepare($sql);
 
 	$stmt->bindParam(':email', $_POST['email']);
-// $var = password_hash($_POST['password'], PASSWORD_DEFAULT);
-// $stmt->bindParam(':password', $var);
-	$stmt->bindParam(':password',$_POST['password']);
+ $var = password_hash($_POST['password'], PASSWORD_DEFAULT);
+ $stmt->bindParam(':password', $var);
+//	$stmt->bindParam(':password',$_POST['password']);
 
 	if( $stmt->execute() ):
 		$message = 'Successfully created new user';

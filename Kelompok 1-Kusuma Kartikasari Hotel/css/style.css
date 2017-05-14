@@ -113,16 +113,27 @@ header {
 .department {
 	float:right;
     text-decoration:none;
-    margin-top: 0px;
+    margin-top: 100px;
 	padding:37px 35px 0 0;
 	color:#72716f;
 	text-align:right;
 }
-/*
-.department:hover {
-	color:azure;
-*/
+.department > a:hover {
+    color:white;}
+
+.sukses {
+	float:right;
+    text-decoration:none;
+    margin-top: 40px;
+	padding:37px 35px 0 0;
+	color:#72716f;
+	text-align:right;
+}
 	
+.sukses > a:hover{
+    color:white;
+}
+
 }
 #menu {
 	background:#fff;
