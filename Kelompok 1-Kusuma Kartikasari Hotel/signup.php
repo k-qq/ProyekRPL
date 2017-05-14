@@ -1,6 +1,8 @@
 <?php
-
-session_start();
+if(!isset($_SESSION))
+{
+		session_start();
+}
 
 if( isset($_SESSION['user_id']) ){
 	header("Location: index.php");
@@ -11,7 +13,7 @@ require 'database.php';
 $message = '';
 
 if(!empty($_POST['email']) && !empty($_POST['password'])):
-	
+
 	// Enter the new user in the database
 	$sql = "INSERT INTO login (email, password) VALUES (:email, :password)";
 	$stmt = $conn->prepare($sql);
@@ -62,7 +64,7 @@ endif;
                     <!-- header -->
                     <header>
                         <h1><a href="index.php" id="logo">Kusuma Kartika Sari Hotel</a></h1>
-                        <div class="department"> <a href="sign.php" style="text-decoration:none">Sign in</a> | <a href="signup.php" style="text-decoration:none">Sign up</a></div>
+												<?php include 'login_out.php'; ?>
                     </header>
                     <div class="box">
                         <nav>

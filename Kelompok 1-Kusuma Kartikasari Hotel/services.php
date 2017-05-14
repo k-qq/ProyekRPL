@@ -1,3 +1,6 @@
+<?php require_once 'session.php'; ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +17,7 @@
     <script type="text/javascript" src="js/jquery.jqtransform.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/atooltip.jquery.js"></script>
-    <!--[if lt IE 9]>		
+    <!--[if lt IE 9]>
 <script type="text/javascript" src="js/html5.js"></script>
 <link rel="stylesheet" href="css/ie.css" type="text/css" media="all">
 <![endif]-->
@@ -27,7 +30,8 @@
                 <!-- header -->
                 <header>
                     <h1><a href="index.php" id="logo">Kusuma Kartika Sari Hotel</a></h1>
-                    <div class="department"> <a href="sign.php" style="text-decoration:none">Sign in</a> | <a href="signup.php" style="text-decoration:none">Sign up</a></div>
+                    <?php include 'login_out.php'; ?>
+                    <!-- <div class="department"> <a href="sign.php" style="text-decoration:none">Sign in</a> | <a href="signup.php" style="text-decoration:none">Sign up</a></div> -->
                 </header>
                 <div class="box">
                     <nav>
@@ -106,66 +110,66 @@
                                             <figure class="left marg_right1"><img src="gambar/receptionist.png_256" alt="resepsionis" width="200" height="150"></figure>
                                             <p class="pad_bot1"><strong class="color3">Pelayanan Resepsionis 24 Jam</strong><br> Pelayanan resepsionis 24 jam memudahkan untuk tamu cek-in serta cek-out kapan pun</p>
                                         </div>
-                                        
+
                                          <div class="wrapper">
                                             <figure class="left marg_right1"><img src="gambar/roomservice.png" alt="laundry" width="200" height="150"></figure>
                                             <p class="pad_bot1"><strong class="color3">Rooms Service & Laundry 24 Jam</strong><br>
                                           Layanan rooms services serta laundry 24 jam siap melayani anda.</p>
                                         </div>
-                                        
+
                                         <div class="wrapper">
                                             <figure class="left marg_right1"><img src="gambar/parking.jpg" alt="resepsionis" width="200" height="150"></figure>
                                             <p class="pad_bot1"><strong class="color3">Tempat Parkir yang sangat luas</strong><br> Ketersediaan tempat parkir didepan dan belakang hotel yang luas dapat menampung semua kendaraan tamu.</p>
                                         </div>
-                                        
+
                                         <div class="wrapper">
                                             <figure class="left marg_right1"><img src="gambar/hall.jpg" alt="hall" width="200" height="150"></figure>
                                             <p class="pad_bot1"><strong class="color3">Kartika Convention Hall</strong><br> Terdapat convention hall untuk berbagai acara dengan kapasitas hingga 1500 pax dan menyediakan berbagai paket menarik untuk berbagai acara seperti : pernikahan, meeting, seminar dan lain-lain.</p>
                                         </div>
-                                        
+
                                         <div class="wrapper">
                                             <figure class="left marg_right1"><img src="gambar/wifi.jpg" alt="wifi" width="200" height="150"></figure>
                                             <p class="pad_bot1"><strong class="color3">Free Wi-Fi</strong><br>
                                             Tersedianya Wi-Fi di seluruh area hotel dengan kecepatan mencapai 1 Mbps</p>
                                         </div>
-                                        
+
                                          <div class="wrapper">
                                             <figure class="left marg_right1"><img src="gambar/telephone.jpg" alt="telp" width="200" height="150"></figure>
                                             <p class="pad_bot1"><strong class="color3">Central Telephone</strong><br>
                                            Tersedianya telephone tiap kamar memudahkan tamu untuk menghubungi layanan kamar atau resepsionis</p>
                                         </div>
-                                        
+
                                         <div class="wrapper">
                                             <figure class="left marg_right1"><img src="gambar/bathub.png" alt="bathub" width="200" height="150"></figure>
                                             <p class="pad_bot1"><strong class="color3">Bathub dan Pemanas air</strong><br>
                                            Fasilitas bathub di beberapa tipe kamar serta pemanas air untuk memanjakan tamu.</p>
                                         </div>
-                                        
+
                                         <div class="wrapper">
                                             <figure class="left marg_right1"><img src="gambar/ac.jpg" alt="ac" width="200" height="150"></figure>
                                             <p class="pad_bot1"><strong class="color3">AC</strong><br>
                                            Fasilitas AC di tiap kamar.</p>
                                         </div>
-                                        
+
                                         <div class="wrapper">
                                             <figure class="left marg_right1"><img src="gambar/joggging.jpg" alt="jogging" width="200" height="150"></figure>
                                             <p class="pad_bot1"><strong class="color3">Jogging Track</strong><br>
                                            Area hotel kami juga dapat menjadi rute jogging anda dipagi maupun siang hari untuk meregangkan otot dan sendi sejenak.</p>
                                         </div>
-                                        
+
                                          <div class="wrapper">
                                             <figure class="left marg_right1"><img src="gambar/tv.jpg" alt="tv" width="200" height="150"></figure>
                                             <p class="pad_bot1"><strong class="color3">Color TV</strong><br>
                                            Fasilitas TV di tiap kamar.</p>
                                         </div>
-                                        
+
                                         <div class="wrapper">
                                             <figure class="left marg_right1"><img src="gambar/drugstore.png" alt="drugstore" width="200" height="150"></figure>
                                             <p class="pad_bot1"><strong class="color3">Drugstore</strong><br>
                                            Tersedia apotek yang menjual obat untuk para tamu.</p>
                                         </div>
 
-                                        
+
                                     </div>
                                 </div>
 <!--

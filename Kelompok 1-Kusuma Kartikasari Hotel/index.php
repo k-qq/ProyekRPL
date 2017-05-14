@@ -1,25 +1,4 @@
-<?php
-
-session_start();
-
-require 'database.php';
-
-if( isset($_SESSION['user_id']) ){
-
-	$records = $conn->prepare('SELECT id,email,password FROM login WHERE id = :id');
-	$records->bindParam(':id', $_SESSION['user_id']);
-	$records->execute();
-	$results = $records->fetch(PDO::FETCH_ASSOC);
-
-	$user = NULL;
-
-	if( count($results) > 0){
-		$user = $results;
-	}
-
-}
-
-?>
+<?php require_once 'session.php'; ?>
 
     <!DOCTYPE html>
     <html lang="en">
@@ -51,18 +30,7 @@ if( isset($_SESSION['user_id']) ){
                     <!-- header -->
                     <header>
                         <h1><a href="index.php" id="logo">Kusuma Kartikasari Hotel</a></h1>
-                        <?php if( !empty($user) ): ?>
-                        <div class="sukses">
-                            <br />Welcome <?= $user['email']; ?>
-                                <a href="order.php" style="text-decoration:none"><h4>Pesanan Saya</h4>
-                                <a href="signout.php" style="text-decoration:none">Sign out?</a>
-                                </a>
-                        </div>
-                        <?php else: ?>
-
-                        <div class="department"> <a href="sign.php" style="text-decoration:none">Sign in</a> | <a href="signup.php" style="text-decoration:none">Sign up</a></div>
-
-                        <?php endif; ?>
+												<?php include 'login_out.php'; ?>
 
 
                         <!--                            <div class="department"> <a href="sign.php" style="text-decoration:none">Sign in</a> | <a href="signup.php" style="text-decoration:none">Sign up</a></div>-->

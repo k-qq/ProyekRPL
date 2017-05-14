@@ -1,3 +1,6 @@
+<?php require_once 'session.php'; ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +30,8 @@
                 <!-- header -->
                 <header>
                     <h1><a href="index.php" id="logo">Kusuma Kartikasari Hotel</a></h1>
-                    <div class="department"> <a href="sign.php" style="text-decoration:none">Sign in</a> | <a href="signup.php" style="text-decoration:none">Sign up</a></div>
+                    <?php include 'login_out.php'; ?>
+                    <!-- <div class="department"> <a href="sign.php" style="text-decoration:none">Sign in</a> | <a href="signup.php" style="text-decoration:none">Sign up</a></div> -->
                 </header>
                 <div class="box">
                     <nav>
@@ -126,7 +130,7 @@
                                             <p class="pad_bot1"><strong class="color3">Executive Cottage</strong></p>
                                             <p>Tipe kamar ini merupakan tipe kamar eksklusif yang berada di lantai 2,dengan kamar luas serta satu king bed.</p>
 
-                                           
+
                                            <br>
                                            <br>
                                             <h3><strong>Harga = Rp. 250.000 nett/kamar/malam</strong></h3>
@@ -151,7 +155,7 @@
                                             <p class="pad_bot1"><strong class="color3">Deluxe</strong></p>
                                             <p>Tipe kamar ini merupakan tipe kamar deluxe di lantai 2,dengan dua single bed.</p>
 
-                                           
+
                                            <br>
                                            <br>
                                             <h3><strong>Harga = Rp. 200.000 nett/kamar/malam</strong></h3>
@@ -173,7 +177,7 @@
                                     </div>
                                 </div>
                             </div>
-                    
+
 <!--
                         <div class="pad">
                             <div class="wrapper line3">

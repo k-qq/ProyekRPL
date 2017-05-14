@@ -1,3 +1,5 @@
+<?php require_once 'session.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +29,8 @@
                 <!-- header -->
                 <header>
                     <h1><a href="index.php" id="logo">Kusuma Kartika Sari Hotel</a></h1>
-                    <div class="department"> <a href="sign.php" style="text-decoration:none">Sign in</a> | <a href="signup.php" style="text-decoration:none">Sign up</a></div>
+                    <?php include 'login_out.php'; ?>
+                    <!-- <div class="department"> <a href="sign.php" style="text-decoration:none">Sign in</a> | <a href="signup.php" style="text-decoration:none">Sign up</a></div> -->
                 </header>
                 <div class="box">
                     <nav>
