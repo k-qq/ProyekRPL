@@ -16,6 +16,13 @@ mark, rp, rt, ruby, summary, time {
 	width:100%;
 	overflow:hidden
 }
+
+#sukses{
+   padding-top: -100px;    
+}
+
+
+
 /* Global properties ======================================================== */
 body {
 	background:#000;
@@ -106,7 +113,7 @@ header {
 .department {
 	float:right;
     text-decoration:none;
-    margin-top: 100px;
+    margin-top: 0px;
 	padding:37px 35px 0 0;
 	color:#72716f;
 	text-align:right;
@@ -514,3 +521,5 @@ a.jqTransformSelectOpen {
 	margin-left:4px;
 	padding:0 19px
 }
+
+
