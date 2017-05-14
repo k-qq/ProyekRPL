@@ -18,7 +18,7 @@ mark, rp, rt, ruby, summary, time {
 }
 
 #sukses{
-   padding-top: -100px;    
+   padding-top: -100px;
 }
 
 
@@ -129,7 +129,7 @@ header {
 	color:#72716f;
 	text-align:right;
 }
-	
+
 .sukses > a:hover{
     color:white;
 }
@@ -183,19 +183,20 @@ header {
 	border-radius:1px;
 	-moz-border-radius:1px;
 	-webkit-border-radius:1px;
-	text-decoration:none
+	text-decoration:none;
 }
 .button2 {
 	background:#12110f;
 	color:#fff;
-	padding:0 22px
+	padding:0 22px;
 }
 .button1:hover {
 	background:#2a2824;
-	color:#72716f
+	color:#72716f;
 }
 .button2:hover {
-	background:#f3b21d
+	background:#f3b21d;
+	cursor:pointer;
 }
 /* =========== kwiks slider ========= */
 .kwicks-wrapper {
@@ -532,5 +533,3 @@ a.jqTransformSelectOpen {
 	margin-left:4px;
 	padding:0 19px
 }
-
-

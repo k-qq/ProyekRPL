@@ -1,4 +1,26 @@
-<?php require_once 'session.php'; ?>
+<?php
+  require_once 'session.php';
+  $message ='';
+  require 'database.php';
+  if (!empty($_POST['nama'])):
+        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+        $sql = "INSERT INTO pesan (nama, alamat, email, pesan) VALUES (:nama, :alamat, :email, :pesan)";
+
+        $stmt = $conn->prepare($sql);
+
+        $stmt->bindParam(':nama', $_POST['nama']);
+        $stmt->bindParam(':alamat', $_POST['alamat']);
+        $stmt->bindParam(':email', $_POST['email']);
+        $stmt->bindParam(':pesan', $_POST['pesan']);
+
+        if( $stmt->execute() ):
+          $message = 'Pesan telah terkirim';
+        else:
+          $message = 'Pesan tidak terkirim';
+        endif;
+
+    endif;
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -110,17 +132,19 @@
                                         <li> </li>
                                     </ul>
                                     <h2>Contact Form :</h2>
-                                    <form id="ContactForm" action="#">
+                                    <form id="ContactForm" action="contact.php" method="POST">
                                         <div>
                                             <div class="wrapper">
-                                                <input type="text" class="input"> Name: </div>
+                                                <input type="text" class="input" name="nama"> Name: </div>
                                             <div class="wrapper">
-                                                <input type="text" class="input"> Address: </div>
+                                                <input type="text" class="input" name="alamat"> Address: </div>
                                             <div class="wrapper">
-                                                <input type="text" class="input"> Email: </div>
+                                                <input type="text" class="input" name="email"> Email: </div>
                                             <div class="textarea_box">
-                                                <textarea name="textarea" cols="1" rows="1"></textarea> Contacts: </div>
-                                            <a href="#" class="button2">Send</a> <a href="#" class="button2">Clear</a> </div>
+                                                <textarea class="input" cols="1" rows="1" name="pesan"></textarea> Message: </div>
+                                            <a href="#" class="button2" onclick="document.getElementById('ContactForm').submit()">Send</a>
+                                            <a href="javascript:" class="button2" onclick="document.getElementById('ContactForm').reset()">Clear</a>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
