@@ -109,7 +109,7 @@
 
                                             <h3><strong>Harga = Rp. 550.000 nett/kamar/malam</strong></h3>
 
-                                            <a href="#" class="button2">Book Room</a> </div>
+                                            <a href="order1.php" class="button2">Book Room</a> </div>
 
                                         <div class="col3 pad_left2">
                                             <figure class="pad_bot3"><img src="gambar/execuitive%20suite%202.png" alt="exe-2" width="250" height="150"></figure>
@@ -121,7 +121,7 @@
                                             <br>
                                             <h3><strong>Harga = Rp. 385.000 nett/kamar/malam</strong></h3>
 
-                                            <a href="#" class="button2">Book Room</a>
+                                            <a href="order1.php" class="button2">Book Room</a>
                                         </div>
                                     </div>
                                        <div class="wrapper line1">
@@ -135,7 +135,7 @@
                                            <br>
                                             <h3><strong>Harga = Rp. 250.000 nett/kamar/malam</strong></h3>
 
-                                            <a href="#" class="button2">Book Room</a> </div>
+                                            <a href="order1.php" class="button2">Book Room</a> </div>
 
                                         <div class="col3 pad_left2">
                                             <figure class="pad_bot3"><img src="gambar/executive.png" alt="exe-2" width="250" height="150"></figure>
@@ -145,7 +145,7 @@
                                             <br>
                                             <br>
                                             <h3><strong>Harga = Rp. 275.000 nett/kamar/malam</strong></h3>
-                                            <a href="#" class="button2">Book Room</a>
+                                            <a href="order1.php" class="button2">Book Room</a>
                                         </div>
                                     </div>
 
@@ -160,7 +160,7 @@
                                            <br>
                                             <h3><strong>Harga = Rp. 200.000 nett/kamar/malam</strong></h3>
 
-                                            <a href="#" class="button2">Book Room</a> </div>
+                                            <a href="order1.php" class="button2">Book Room</a> </div>
 
                                         <div class="col3 pad_left2">
                                             <figure class="pad_bot3"><img src="gambar/bussiness%20standart.png" alt="exe-2" width="250" height="150"></figure>
@@ -170,7 +170,7 @@
                                             <br>
                                             <br>
                                             <h3><strong>Harga = Rp. 175.000 nett/kamar/malam</strong></h3>
-                                            <a href="#" class="button2">Book Room</a>
+                                            <a href="order1.php" class="button2">Book Room</a>
                                         </div>
                                     </div>
 

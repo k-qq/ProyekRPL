@@ -1,7 +1,7 @@
 <?php if( !empty($user) ): ?>
 <div class="sukses">
     <br />Welcome <?= $user['email']; ?>
-        <a href="order.php" style="text-decoration:none"><h4>Pesanan Saya</h4>
+        <a href="cart.php" style="text-decoration:none"><h4>Pesanan Saya</h4>
         <a href="signout.php" style="text-decoration:none">Sign out?</a>
         </a>
 </div>
