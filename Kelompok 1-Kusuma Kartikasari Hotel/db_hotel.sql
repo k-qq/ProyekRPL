@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 15 Mei 2017 pada 03.25
--- Versi Server: 10.1.21-MariaDB
--- PHP Version: 7.1.1
+-- Generation Time: May 15, 2017 at 07:07 PM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 7.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -33,10 +33,17 @@ CREATE TABLE `admin` (
   `email` varchar(50) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`idAdmin`, `userName`, `password`, `email`) VALUES
+('123', 'ngad-min', 'adm12.', 'admin@kusuma.com');
+
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `konfirmasi_pembayaran`
+-- Table structure for table `konfirmasi_pembayaran`
 --
 
 CREATE TABLE `konfirmasi_pembayaran` (
@@ -48,7 +55,7 @@ CREATE TABLE `konfirmasi_pembayaran` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `login`
+-- Table structure for table `login`
 --
 
 CREATE TABLE `login` (
@@ -58,21 +65,19 @@ CREATE TABLE `login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data untuk tabel `login`
+-- Dumping data for table `login`
 --
 
 INSERT INTO `login` (`id`, `email`, `password`) VALUES
 (7, 'k@k.k', '$2y$10$TjeTBjz7hA5/1.BU5bSeremntzjNo0.NwWq8wb.uhWq'),
 (8, 'a@a.a', '$2y$10$12SUrbSxMonjDNDoqMz0l.EGXll5kOjofyZOL9ipya5'),
 (10, 'q@q.q', '$2y$10$ZcPaqxLfQbotZNfAP8RqAeyicHBoyGDSKp43aivUuMwenyqUzhrjm'),
-(11, 'qw@qw.q', '$2y$10$h4cmSraRazBszJMxADCgHuQWyBt2phmtSBPfI9vgTfgcFKruVVgMq'),
-(12, 'admin', '$2y$10$uTG0PPMHY1wObrcDmFSFeu9NLcf5pLpF8WUFO9rz5kXD5t8Dy6Wb.'),
-(13, 'zaki', '$2y$10$1hPgamfl4sjEM3aKFxwOPeDdL2kexojLZ8uldttAKLwDkodo8Fr9S');
+(11, 'qw@qw.q', '$2y$10$h4cmSraRazBszJMxADCgHuQWyBt2phmtSBPfI9vgTfgcFKruVVgMq');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pengunjung`
+-- Table structure for table `pengunjung`
 --
 
 CREATE TABLE `pengunjung` (
@@ -87,7 +92,7 @@ CREATE TABLE `pengunjung` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pesan`
+-- Table structure for table `pesan`
 --
 
 CREATE TABLE `pesan` (
@@ -98,7 +103,7 @@ CREATE TABLE `pesan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data untuk tabel `pesan`
+-- Dumping data for table `pesan`
 --
 
 INSERT INTO `pesan` (`nama`, `alamat`, `email`, `pesan`) VALUES
@@ -107,14 +112,12 @@ INSERT INTO `pesan` (`nama`, `alamat`, `email`, `pesan`) VALUES
 ('qwd', 'qdw', 'qwd', 'dqw'),
 ('qwf', 'qwf', 'qwf', 'wf'),
 ('wfq', 'w', 'q', 'w'),
-('nama', 'asem', 'as@em.com', 'jdfaokdoaskcoakovfakwofdka'),
-('hendra', 'hendrahhh', 'hendra@aa.com', 'hei kamu yang manis'),
-('aa', 'aa', 'aa@ss', 'aa');
+('nama', 'asem', 'as@em.com', 'jdfaokdoaskcoakovfakwofdka');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `reservasi_kamar`
+-- Table structure for table `reservasi_kamar`
 --
 
 CREATE TABLE `reservasi_kamar` (
@@ -130,7 +133,7 @@ CREATE TABLE `reservasi_kamar` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `room`
+-- Table structure for table `room`
 --
 
 CREATE TABLE `room` (
@@ -143,7 +146,7 @@ CREATE TABLE `room` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `validasi_pembayaran`
+-- Table structure for table `validasi_pembayaran`
 --
 
 CREATE TABLE `validasi_pembayaran` (
@@ -162,6 +165,7 @@ CREATE TABLE `validasi_pembayaran` (
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`idAdmin`),
+  ADD UNIQUE KEY `userName` (`userName`),
   ADD KEY `idAdmin` (`idAdmin`),
   ADD KEY `idAdmin_2` (`idAdmin`);
 
@@ -217,26 +221,26 @@ ALTER TABLE `validasi_pembayaran`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `konfirmasi_pembayaran`
+-- Constraints for table `konfirmasi_pembayaran`
 --
 ALTER TABLE `konfirmasi_pembayaran`
   ADD CONSTRAINT `konfirmasi_pembayaran_ibfk_1` FOREIGN KEY (`idTamu`) REFERENCES `pengunjung` (`idTamu`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `reservasi_kamar`
+-- Constraints for table `reservasi_kamar`
 --
 ALTER TABLE `reservasi_kamar`
   ADD CONSTRAINT `reservasi_kamar_ibfk_1` FOREIGN KEY (`noKamar`) REFERENCES `room` (`noKamar`),
   ADD CONSTRAINT `reservasi_kamar_ibfk_2` FOREIGN KEY (`idTamu`) REFERENCES `pengunjung` (`idTamu`);
 
 --
--- Ketidakleluasaan untuk tabel `validasi_pembayaran`
+-- Constraints for table `validasi_pembayaran`
 --
 ALTER TABLE `validasi_pembayaran`
   ADD CONSTRAINT `validasi_pembayaran_ibfk_1` FOREIGN KEY (`idKonfirm`) REFERENCES `konfirmasi_pembayaran` (`idKonfirm`),
