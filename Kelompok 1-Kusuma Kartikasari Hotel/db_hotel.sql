@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2017 at 08:52 AM
+-- Generation Time: May 16, 2017 at 09:20 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.8
 
@@ -148,6 +148,7 @@ INSERT INTO `room` (`noKamar`, `hargaKamar`, `tipeKamar`, `statusKamar`) VALUES
 ('102', '550000', ' Executive Suite 1', 0),
 ('103', '550000', ' Executive Suite 1', 0),
 ('104', '550000', ' Executive Suite 1', 0),
+('111', '250000', 'Executive Cottage', 0),
 ('12', '550000', 'Executive Suite 1', 0),
 ('122', '200000', 'Deluxe', 0),
 ('222', '175000', 'Bussines Standard', 0),
