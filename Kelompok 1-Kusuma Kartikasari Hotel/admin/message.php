@@ -63,9 +63,10 @@ if(!isset($_SESSION['user_id']) ){
               <tr>
                 <th>No</th>
                 <th>Nama</th>
+                <th>Alamat</th>
                 <th>Email</th>
                 <th>Pesan</th>
-                <th>Setting</th>
+                <th>Hapus</th>
               </tr>';
 
             protected $body = '';
@@ -79,7 +80,7 @@ if(!isset($_SESSION['user_id']) ){
             public function IncomingMessage(){
               $this->db = new DB;
         			$db = $this->db->query();
-        			$sql = "SELECT nama, alamat, email, pesan FROM pesan";
+        			$sql = "SELECT idPesan, nama, alamat, email, pesan FROM pesan";
         			$result = mysqli_query($db,$sql);
 
               $number = 1;
@@ -90,6 +91,7 @@ if(!isset($_SESSION['user_id']) ){
                     <td>'.$data['alamat'].'</td>
                     <td>'.$data['email'].'</td>
                     <td>'.$data['pesan'].'</td>
+                    <td><a href="delete_message.php?id='.$data['idPesan'].'" onclick="return confirm(\'Apakah anda yakin ingin menghapus?\')"> <span class="glyphicon glyphicon-remove"></span> </a></td>
                   </tr>';
                   $number++;
               }
