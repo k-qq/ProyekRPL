@@ -7,6 +7,8 @@ if(!isset($_SESSION))
 if(!isset($_SESSION['user_id']) ){
 	header("Location: login.php");
 }
+
+
 ?>
 
 <?php include 'include/header.php'; ?>
@@ -42,10 +44,19 @@ if(!isset($_SESSION['user_id']) ){
         <ul class="nav navbar-nav">
 
             <li><a href="room_data.php"><span class="glyphicon glyphicon-bed"></span> Data Kamar</a></li>
-            <li><a href="user.php"><span class="glyphicon glyphicon-user"></span> Data User</a></li>
+            <li class="active"><a href="javascript:"><span class="glyphicon glyphicon-user"></span> Data User</a></li>
             <li><a href="message.php"><span class="glyphicon glyphicon-envelope"></span> Pesan User</a></li>
             <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 
         </ul>
     </div><!-- /.navbar-collapse -->
+
+    <!-- tabel user -->
+    
+<!--
+    <table>
+      <tr>
+        <td></td>
+      </tr>
+    </table> -->
 </nav>

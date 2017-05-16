@@ -23,7 +23,6 @@ echo $results['password'];
 	if(count($results) > 0 && password_verify($_POST['password'], $results['password']) ){
 //	if(count($results) > 0 && ($_POST['password'] = $results['password']) ){
 		$_SESSION['user_id'] = $results['id'];
-        echo"6";
 		header("Location: index.php");
 	} else {
 		$message = 'Sorry, those credentials do not match';
