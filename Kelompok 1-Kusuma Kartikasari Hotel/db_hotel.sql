@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 15, 2017 at 07:07 PM
+-- Generation Time: May 16, 2017 at 08:52 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.8
 
@@ -96,6 +96,7 @@ CREATE TABLE `pengunjung` (
 --
 
 CREATE TABLE `pesan` (
+  `idPesan` int(11) NOT NULL,
   `nama` varchar(20) COLLATE utf8_bin NOT NULL,
   `alamat` varchar(50) COLLATE utf8_bin NOT NULL,
   `email` varchar(20) COLLATE utf8_bin NOT NULL,
@@ -106,13 +107,9 @@ CREATE TABLE `pesan` (
 -- Dumping data for table `pesan`
 --
 
-INSERT INTO `pesan` (`nama`, `alamat`, `email`, `pesan`) VALUES
-('qwd', 'qwdq', 'wdq', NULL),
-('q', 'qq', 'q', NULL),
-('qwd', 'qdw', 'qwd', 'dqw'),
-('qwf', 'qwf', 'qwf', 'wf'),
-('wfq', 'w', 'q', 'w'),
-('nama', 'asem', 'as@em.com', 'jdfaokdoaskcoakovfakwofdka');
+INSERT INTO `pesan` (`idPesan`, `nama`, `alamat`, `email`, `pesan`) VALUES
+(2, 'q', 'qq', 'q', NULL),
+(6, 'nama', 'asem', 'as@em.com', 'jdfaokdoaskcoakovfakwofdka');
 
 -- --------------------------------------------------------
 
@@ -139,9 +136,23 @@ CREATE TABLE `reservasi_kamar` (
 CREATE TABLE `room` (
   `noKamar` char(6) COLLATE utf8_bin NOT NULL,
   `hargaKamar` decimal(10,0) NOT NULL,
-  `tipeKamar` varchar(10) COLLATE utf8_bin NOT NULL,
+  `tipeKamar` varchar(20) COLLATE utf8_bin NOT NULL,
   `statusKamar` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `room`
+--
+
+INSERT INTO `room` (`noKamar`, `hargaKamar`, `tipeKamar`, `statusKamar`) VALUES
+('102', '550000', ' Executive Suite 1', 0),
+('103', '550000', ' Executive Suite 1', 0),
+('104', '550000', ' Executive Suite 1', 0),
+('12', '550000', 'Executive Suite 1', 0),
+('122', '200000', 'Deluxe', 0),
+('222', '175000', 'Bussines Standard', 0),
+('321', '275000', 'Executive', 0),
+('33', '385000', 'Executive Suite', 0);
 
 -- --------------------------------------------------------
 
@@ -192,6 +203,12 @@ ALTER TABLE `pengunjung`
   ADD PRIMARY KEY (`idTamu`);
 
 --
+-- Indexes for table `pesan`
+--
+ALTER TABLE `pesan`
+  ADD PRIMARY KEY (`idPesan`);
+
+--
 -- Indexes for table `reservasi_kamar`
 --
 ALTER TABLE `reservasi_kamar`
@@ -222,6 +239,11 @@ ALTER TABLE `validasi_pembayaran`
 --
 ALTER TABLE `login`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT for table `pesan`
+--
+ALTER TABLE `pesan`
+  MODIFY `idPesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- Constraints for dumped tables
 --
