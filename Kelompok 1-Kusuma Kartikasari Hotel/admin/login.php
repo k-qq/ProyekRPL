@@ -5,7 +5,7 @@ if(!isset($_SESSION))
 		session_start();
 }
 
-if( isset($_SESSION['user_id']) ){
+if( isset($_SESSION['admin_id']) ){
 	header("Location: index.php");
 }
 
@@ -27,7 +27,7 @@ class Login{
 			// $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 			$count = mysqli_num_rows($result);
 				if($count == 1) {
-								 $_SESSION['user_id'] = $result;
+								 $_SESSION['admin_id'] = $result;
 								 header("location: index.php");
 							}else {
 								 $this->error = "Your Login Name or Password is invalid";

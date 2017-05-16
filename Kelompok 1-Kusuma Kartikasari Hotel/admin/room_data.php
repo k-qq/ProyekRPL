@@ -4,7 +4,7 @@ if(!isset($_SESSION))
 		session_start();
 }
 
-if(!isset($_SESSION['user_id']) ){
+if(!isset($_SESSION['admin_id']) ){
 	header("Location: login.php");
 }
 ?>
@@ -91,7 +91,7 @@ if(!isset($_SESSION['user_id']) ){
                   <td>'.$data['tipeKamar'].'</td>
                   <td>'.$data['statusKamar'].'</td>
                   <td>
-                  <a href="update_room.php"?id='.$data['noKamar'].'" onclick="return confirm(\'Apakah anda yakin ingin mengedit?\')" ><span class="glyphicon glyphicon-edit"></span></a>
+                  <a href="update_room.php?id='.$data['noKamar'].'" onclick="return confirm(\'Apakah anda yakin ingin mengedit?\')" ><span class="glyphicon glyphicon-edit"></span></a>
                   <a href="delete_room.php?id='.$data['noKamar'].'" onclick="return confirm(\'Apakah anda yakin ingin menghapus?\')"> <span class="glyphicon glyphicon-remove"></span> </a></td>
                 </tr>';
             }
