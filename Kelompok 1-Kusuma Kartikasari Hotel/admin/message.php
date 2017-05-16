@@ -59,15 +59,14 @@ if(!isset($_SESSION['user_id']) ){
 
           class Message{
 
-            protected $header = '<table border=1>
+            protected $header = '<table style="margin-left: 400px;" border=1>
               <tr>
                 <th>No</th>
                 <th>Nama</th>
                 <th>Email</th>
                 <th>Pesan</th>
                 <th>Setting</th>
-              </tr>
-            </table>';
+              </tr>';
 
             protected $body = '';
 
