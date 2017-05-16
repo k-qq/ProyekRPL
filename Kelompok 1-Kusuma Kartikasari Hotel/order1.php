@@ -1,4 +1,5 @@
-<?php require_once 'session.php'; ?>
+<?php
+  require_once 'session.php';?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,19 +21,35 @@
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/kwicks-1.5.1.pack.js"></script>
     <script type="text/javascript" src="js/atooltip.jquery.js"></script>
-    
+
     <!--[if lt IE 9]>
 <script type="text/javascript" src="js/html5.js"></script>
 <link rel="stylesheet" href="css/ie.css" type="text/css" media="all">
 <![endif]-->
-
     <script>
         $(function() {
-            $("#tanggalin").datepicker();
-            $("#tanggalout").datepicker();
+          $( "#tanggalin" ).datepicker({
+            defaultDate: "+1w",
+            dateFormat: 'yy-mm-dd',
+            // changeMonth: true,
+            numberOfMonths: 2,
+            minDate: 0,
+            onClose: function( selectedDate ) {
+              $( "#tanggalout" ).datepicker( "option", "minDate", selectedDate );
+            }
+          });
+          $( "#tanggalout" ).datepicker({
+            defaultDate: "+1w",
+            dateFormat: 'yy-mm-dd',
+            // changeMonth: true,
+            numberOfMonths: 2,
+            onClose: function( selectedDate ) {
+              $( "#tanggalin" ).datepicker( "option", "maxDate", selectedDate );
+            }
+          });
         });
-
     </script>
+
 </head>
 
 <body id="page1">
@@ -61,16 +78,16 @@
                             <div class="formorder">
                                 <h2>1.Data Kamar :</h2>
 
-                                <form id="ContactForm" action="order1.php" method="POST">
+                                <form id="ContactForm" action="order_query1.php" method="POST">
                                     <div class="order1">
                                         <div class="wrapper">
                                             Check-in :
                                             <input type="text" name="tanggalin" id="tanggalin">  </div>
                                         <div class="wrapper">
-                                           Check-out : 
+                                           Check-out :
                                            <input type="text" name="tanggalout" id="tanggalout">  </div>
                                         <div class="wrapper">
-                                            Tipe Kamar : <select id="pilihan" name="rooms"> 
+                                            Tipe Kamar : <select id="pilihan" name="rooms">
                                             <option disabled="disabled" value="">Tipe Kamar...</option>
                                             <option>Executive Suite 1</option>
                                             <option>Executive Suite 2</option>
@@ -81,7 +98,7 @@
                                             </select>
                                         </div>
                                         <div class="wrapper">
-                                            Jumlah Kamar : <select id="pilihan2" name="jumlah"> 
+                                            Jumlah Kamar : <select id="pilihan2" name="jumlah">
                                             <option disabled="disabled" value="">Jumlah Kamar...</option>
                                             <option>1</option>
                                             <option>2</option>
@@ -89,8 +106,7 @@
                                             <option>4</option>
                                           </select>
                                         </div>
-
-                                        <a href="order2.php" class="button2" onclick="document.getElementById('ContactForm').submit()">Send</a>
+                                        <a class="button2" onclick="document.getElementById('ContactForm').submit()">Send</a>
                                         <a href="javascript:" class="button2" onclick="document.getElementById('ContactForm').reset()">Clear</a>
                                     </div>
                                 </form>

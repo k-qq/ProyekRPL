@@ -58,7 +58,7 @@
                                         <div class="wrapper">
                                             <input type="text" class="input" name="address"> Alamat : </div>
                                         <div class="wrapper">
-                                            Negara : <select id="pilihan" name="country"> 
+                                            Negara : <select id="pilihan" name="country">
                                             <option disabled="disabled" value="">Negara...</option>
 							<option>Afghanistan</option>
 							<option>Albania</option>
