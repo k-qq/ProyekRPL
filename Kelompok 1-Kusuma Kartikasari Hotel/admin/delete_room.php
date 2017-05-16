@@ -2,28 +2,28 @@
 
   include 'include/database.php';
 
-  class DeletePesan{
-    protected $idPesan;
+  class DeleteRoom{
+    protected $roomNum;
 
     public function __construct(){
-      $this->idPesan = $_GET['id'];
+      $this->roomNum = $_GET['id'];
 
     }
 
     public function delete(){
       $this->db = new DB;
       $db = $this->db->query();
-      $sql = "DELETE FROM pesan WHERE idPesan = '$this->idPesan'";
+      $sql = "DELETE FROM room WHERE noKamar = '$this->roomNum'";
       $result = mysqli_query($db,$sql);
       if(!$result){
-        header ('Location: message.php');
+        header ('Location: room_data.php');
         echo "Data tidak bisa terhapus";
       }
-      header ('Location: message.php');
+      header ('Location: room_data.php');
     }
   }
 
-  $obj = new DeletePesan();
+  $obj = new DeleteRoom();
   $obj->delete();
 
 ?>
