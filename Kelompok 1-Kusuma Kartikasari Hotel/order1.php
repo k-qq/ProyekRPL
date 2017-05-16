@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-    <!--<script type="text/javascript" src="js/jquery-1.6.js"></script>-->
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+     <!--<script type="text/javascript" src="js/jquery-1.6.js"></script>-->
     <script type="text/javascript" src="js/cufon-yui.js"></script>
     <script type="text/javascript" src="js/cufon-replace.js"></script>
     <script type="text/javascript" src="js/Adamina_400.font.js"></script>
@@ -18,8 +20,7 @@
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/kwicks-1.5.1.pack.js"></script>
     <script type="text/javascript" src="js/atooltip.jquery.js"></script>
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    
     <!--[if lt IE 9]>
 <script type="text/javascript" src="js/html5.js"></script>
 <link rel="stylesheet" href="css/ie.css" type="text/css" media="all">
@@ -69,7 +70,7 @@
                                            Check-out : 
                                            <input type="text" name="tanggalout" id="tanggalout">  </div>
                                         <div class="wrapper">
-                                            Tipe Kamar : <select id="pilihan" name="country"> 
+                                            Tipe Kamar : <select id="pilihan" name="rooms"> 
                                             <option disabled="disabled" value="">Tipe Kamar...</option>
                                             <option>Executive Suite 1</option>
                                             <option>Executive Suite 2</option>
@@ -80,7 +81,7 @@
                                             </select>
                                         </div>
                                         <div class="wrapper">
-                                            Jumlah Kamar : <select id="pilihan2" name="country"> 
+                                            Jumlah Kamar : <select id="pilihan2" name="jumlah"> 
                                             <option disabled="disabled" value="">Jumlah Kamar...</option>
                                             <option>1</option>
                                             <option>2</option>

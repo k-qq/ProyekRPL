@@ -421,25 +421,46 @@ footer a:hover {
 	color:#fff
 }
 #form1 .right {
-	width:140px
+	width:160px
 }
 #form1 .row {
-	height:30px;
+	height:35px;
 	line-height:22px
 }
+/*
 #form1 .row_textarea {
 	height:102px;
 	line-height:22px
 }
-#form1 .input {
+*/
+#form1 input {
 	font:12px Arial, Helvetica, sans-serif;
 	color:#72716f;
 	background:none;
-	height:15px;
+	height:18px;
 	padding:3px 5px;
 	width:128px;
-	margin:0
+    border: 1px solid #f2f2f2;   
 }
+#dateIn{
+    margin-left: 48px;
+}
+#dateOut{
+    margin-left: 41px;
+}
+#form1 select {
+	font:12px Arial, Helvetica, sans-serif;
+	color:#72716f;
+	background:none;
+	height:25px;
+	padding:3px 5px;
+	width:128px;
+    border: 1px solid #f2f2f2;
+}
+#roomsearch{
+    margin-left: 17px;
+}
+/*
 #form1 textarea {
 	font:12px Arial, Helvetica, sans-serif;
 	color:#72716f;
@@ -449,6 +470,7 @@ footer a:hover {
 	width:222px;
 	margin:0;
 	overflow:auto
+*/
 }
 /* -------------
  * Hidden - used to hide the original form elements

@@ -30,7 +30,7 @@ if(!isset($_SESSION['user_id']) ){
 
             <!-- Brand -->
             <div class="brand-name-wrapper">
-                <a class="navbar-brand" href="index.php">
+                <a class="navbar-brand" href="#">
                     KUSUMA KARTIKASARI HOTEL
                 </a>
             </div>
@@ -41,9 +41,9 @@ if(!isset($_SESSION['user_id']) ){
     <div class="side-menu-container">
         <ul class="nav navbar-nav">
 
-            <li><a href="room_data.php"><span class="glyphicon glyphicon-bed"></span> Data Kamar</a></li>
-            <li><a href="user.php"><span class="glyphicon glyphicon-user"></span> Data User</a></li>
-            <li><a href="message.php"><span class="glyphicon glyphicon-envelope"></span> Pesan User</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-bed"></span> Data Kamar</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Data User</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Pesan User</a></li>
             <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 
         </ul>

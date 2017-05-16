@@ -10,17 +10,26 @@
     <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
     <link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
-    <script type="text/javascript" src="js/jquery-1.6.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <!--    <script type="text/javascript" src="js/jquery-1.6.js"></script>-->
     <script type="text/javascript" src="js/cufon-yui.js"></script>
     <script type="text/javascript" src="js/cufon-replace.js"></script>
     <script type="text/javascript" src="js/Adamina_400.font.js"></script>
-    <script type="text/javascript" src="js/jquery.jqtransform.js"></script>
+    <!--    <script type="text/javascript" src="js/jquery.jqtransform.js"></script>-->
     <script type="text/javascript" src="js/script.js"></script>
-    <script type="text/javascript" src="js/atooltip.jquery.js"></script>
+    <!--    <script type="text/javascript" src="js/atooltip.jquery.js"></script>-->
     <!--[if lt IE 9]>
 <script type="text/javascript" src="js/html5.js"></script>
 <link rel="stylesheet" href="css/ie.css" type="text/css" media="all">
 <![endif]-->
+ <script>
+        $(function() {
+            $("#dateIn").datepicker();
+            $("#dateOut").datepicker();
+        });
+    </script>
 </head>
 
 <body id="page2">
@@ -52,49 +61,32 @@
                                     <h2>Book a Room</h2>
                                     <fieldset>
                                         <div class="row">
-                                            <input type="text" class="input"> Your Name: </div>
+                                            Cek-in: <input type="text" name="datein" id="dateIn"> </div>
                                         <div class="row">
-                                            <input type="text" class="input"> E-Mail Address: </div>
+                                            Cek-out: <input type="text" name="dateout" id="dateOut"></div>
                                         <div class="row">
-                                            <input type="text" class="input"> Home Phone: </div>
+                                            Tipe Kamar :
+                                            <select id="roomsearch" name="rooms">
+                                                   
+                                                    <option disabled="disabled" value="">Tipe Kamar...</option>
+                                                    <option>Executive Suite 1</option>
+                                                    <option>Executive Suite 2</option>
+                                                    <option>Executive </option>
+                                                    <option>Executive Cottage</option>
+                                                    <option>Deluxe</option>
+                                                    <option>Bussiness Standart</option>
+                                                 </select>
+                                        </div>
                                         <div class="row">
-                                            <div class="select1">
-                                                <select>
-                        <option>&nbsp;</option>
-                        <option>...</option>
-                      </select>
-                                            </div>
-                                            Length of Stay: </div>
-                                        <div class="row">
-                                            <div class="select1">
-                                                <select>
-                        <option>&nbsp;</option>
-                        <option>...</option>
-                      </select>
-                                            </div>
-                                            Number in Party: </div>
-                                        <div class="row">
-                                            <div class="select2">
-                                                <select>
-                        <option>&nbsp;</option>
-                        <option>...</option>
-                      </select>
-                                            </div>
-                                            <div class="select2">
-                                                <select>
-                        <option>&nbsp;</option>
-                        <option>...</option>
-                      </select>
-                                            </div>
-                                            <div class="select2">
-                                                <select>
-                        <option>&nbsp;</option>
-                        <option>...</option>
-                      </select>
-                                            </div>
-                                            Arrival Date: </div>
-                                        <div class="row_textarea"> Additional Comments:
-                                            <textarea cols="1" rows="1"></textarea>
+                                            Jumlah Kamar :
+                                            <select name="jumlah">
+                                                    <option disabled="disabled" value="">Jumlah Kamar...</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                </select>
+
                                         </div>
                                         <div class="wrapper"> <a href="#" class="button1">Send</a> <a href="#" class="button1">Clear</a> </div>
                                     </fieldset>
@@ -111,10 +103,9 @@
                                             <p class="pad_bot1"><strong class="color3">Pelayanan Resepsionis 24 Jam</strong><br> Pelayanan resepsionis 24 jam memudahkan untuk tamu cek-in serta cek-out kapan pun</p>
                                         </div>
 
-                                         <div class="wrapper">
+                                        <div class="wrapper">
                                             <figure class="left marg_right1"><img src="gambar/roomservice.png" alt="laundry" width="200" height="150"></figure>
-                                            <p class="pad_bot1"><strong class="color3">Rooms Service & Laundry 24 Jam</strong><br>
-                                          Layanan rooms services serta laundry 24 jam siap melayani anda.</p>
+                                            <p class="pad_bot1"><strong class="color3">Rooms Service & Laundry 24 Jam</strong><br> Layanan rooms services serta laundry 24 jam siap melayani anda.</p>
                                         </div>
 
                                         <div class="wrapper">
@@ -129,50 +120,43 @@
 
                                         <div class="wrapper">
                                             <figure class="left marg_right1"><img src="gambar/wifi.jpg" alt="wifi" width="200" height="150"></figure>
-                                            <p class="pad_bot1"><strong class="color3">Free Wi-Fi</strong><br>
-                                            Tersedianya Wi-Fi di seluruh area hotel dengan kecepatan mencapai 1 Mbps</p>
+                                            <p class="pad_bot1"><strong class="color3">Free Wi-Fi</strong><br> Tersedianya Wi-Fi di seluruh area hotel dengan kecepatan mencapai 1 Mbps</p>
                                         </div>
 
-                                         <div class="wrapper">
+                                        <div class="wrapper">
                                             <figure class="left marg_right1"><img src="gambar/telephone.jpg" alt="telp" width="200" height="150"></figure>
-                                            <p class="pad_bot1"><strong class="color3">Central Telephone</strong><br>
-                                           Tersedianya telephone tiap kamar memudahkan tamu untuk menghubungi layanan kamar atau resepsionis</p>
+                                            <p class="pad_bot1"><strong class="color3">Central Telephone</strong><br> Tersedianya telephone tiap kamar memudahkan tamu untuk menghubungi layanan kamar atau resepsionis</p>
                                         </div>
 
                                         <div class="wrapper">
                                             <figure class="left marg_right1"><img src="gambar/bathub.png" alt="bathub" width="200" height="150"></figure>
-                                            <p class="pad_bot1"><strong class="color3">Bathub dan Pemanas air</strong><br>
-                                           Fasilitas bathub di beberapa tipe kamar serta pemanas air untuk memanjakan tamu.</p>
+                                            <p class="pad_bot1"><strong class="color3">Bathub dan Pemanas air</strong><br> Fasilitas bathub di beberapa tipe kamar serta pemanas air untuk memanjakan tamu.</p>
                                         </div>
 
                                         <div class="wrapper">
                                             <figure class="left marg_right1"><img src="gambar/ac.jpg" alt="ac" width="200" height="150"></figure>
-                                            <p class="pad_bot1"><strong class="color3">AC</strong><br>
-                                           Fasilitas AC di tiap kamar.</p>
+                                            <p class="pad_bot1"><strong class="color3">AC</strong><br> Fasilitas AC di tiap kamar.</p>
                                         </div>
 
                                         <div class="wrapper">
                                             <figure class="left marg_right1"><img src="gambar/joggging.jpg" alt="jogging" width="200" height="150"></figure>
-                                            <p class="pad_bot1"><strong class="color3">Jogging Track</strong><br>
-                                           Area hotel kami juga dapat menjadi rute jogging anda dipagi maupun siang hari untuk meregangkan otot dan sendi sejenak.</p>
+                                            <p class="pad_bot1"><strong class="color3">Jogging Track</strong><br> Area hotel kami juga dapat menjadi rute jogging anda dipagi maupun siang hari untuk meregangkan otot dan sendi sejenak.</p>
                                         </div>
 
-                                         <div class="wrapper">
+                                        <div class="wrapper">
                                             <figure class="left marg_right1"><img src="gambar/tv.jpg" alt="tv" width="200" height="150"></figure>
-                                            <p class="pad_bot1"><strong class="color3">Color TV</strong><br>
-                                           Fasilitas TV di tiap kamar.</p>
+                                            <p class="pad_bot1"><strong class="color3">Color TV</strong><br> Fasilitas TV di tiap kamar.</p>
                                         </div>
 
                                         <div class="wrapper">
                                             <figure class="left marg_right1"><img src="gambar/drugstore.png" alt="drugstore" width="200" height="150"></figure>
-                                            <p class="pad_bot1"><strong class="color3">Drugstore</strong><br>
-                                           Tersedia apotek yang menjual obat untuk para tamu.</p>
+                                            <p class="pad_bot1"><strong class="color3">Drugstore</strong><br> Tersedia apotek yang menjual obat untuk para tamu.</p>
                                         </div>
 
 
                                     </div>
                                 </div>
-<!--
+                                <!--
                                 <div class="pad">
                                     <div class="wrapper line3">
                                         <div class="col2">
