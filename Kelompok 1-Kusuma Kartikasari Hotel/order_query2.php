@@ -1,42 +1,49 @@
 <?php
   require 'db_oop.php';
-  class Order{
+  // require_once 'order_query1.php';
 
-    protected $check_in;
-    protected $check_out;
-    protected $roomType;
-    protected $totalRoom;
+  class OrderQ{
+
+    protected $idOrder;
+    protected $guestName;
+    protected $idNumber;
+    protected $address;
+    protected $country;
+    protected $city;
+    protected $province;
+    protected $zipCode;
+    protected $phone;
+    protected $email;
 
     public function __construct(){
-      $this->check_in = $_POST['tanggalin'];
-      $this->check_out = $_POST['tanggalout'];
-      $this->roomType = $_POST['rooms'];
-      $this->totalRoom = $_POST['jumlah'];
-
+      $this->idOrder = $_POST['idiOrder'];
+      $this->guestName = $_POST['nama'];
+      $this->idNumber = $_POST['no_id'];
+      $this->address = $_POST['address'];
+      $this->country = $_POST['country'];
+      $this->city = $_POST['city'];
+      $this->province = $_POST['province'];
+      $this->zipCode = $_POST['kodpos'];
+      $this->phone = $_POST['no_hp'];
+      $this->email = $_POST['email'];
     }
 
     public function order(){
       $this->db = new Database();
       $db = $this->db->query();
-      $sql = "INSERT INTO order1 (check_in, check_out, tipeKamar, jumlahKamar) values ('$this->check_in','$this->check_out','$this->roomType','$this->totalRoom')";
+      $sql = "INSERT INTO order2 (idOrder, nama, noId, alamat, negara, kota, provisni, kodePos, noTelp, email)  values ('$this->idOrder','$this->guestName','$this->idNumber','$this->address','$this->country','$this->city','$this->province','$this->zipCode','$this->phone','$this->email')";
 
+      echo $sql;
       $result = mysqli_query($db,$sql);
       if(!$result){
-        echo "Kamar tidak bisa ditambah";
+        echo "Pemesanan gagal";
       }
-      header ('Location: order2.php');
-    }
-
-    public function selectIdOrder(){
-      $data = mysqli_fetch_array($sql,MYSQLI_ASSOC);
-      $sql2 = "SELECT idOrder FROM order1 =$data['idOrder']";
-      $result2 = mysqli_query($db, $sql);
-      return $result2;
+      header ('Location: cart.php');
     }
 
   }
 
-  $order = new Order();
+  $order = new OrderQ();
   $order->order();
 
 ?>

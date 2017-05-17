@@ -44,7 +44,7 @@ if(!isset($_SESSION['admin_id']) ){
             <li><a href="room_data.php"><span class="glyphicon glyphicon-bed"></span> Data Kamar</a></li>
             <li><a href="user.php"><span class="glyphicon glyphicon-user"></span> Data User</a></li>
             <li><a href="message.php"><span class="glyphicon glyphicon-envelope"></span> Pesan User</a></li>
-						<li><a href="validate.php"><span class="glyphicon glyphicon-ok"></span> Validasi Pembayaran</a></li>
+						<!-- <li><a href="validate.php"><span class="glyphicon glyphicon-ok"></span> Validasi Pembayaran</a></li> -->
             <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 
         </ul>

@@ -1,4 +1,4 @@
-<?
+<?php
 
 include 'include/database.php';
 
@@ -9,7 +9,7 @@ class Up{
   protected $roomStatus;
 
   public function __construct(){
-    $this->roomNum = $_POST['nomorKamar'];
+    $this->roomNum = $_POST['noKamar'];
     $this->roomType = $_POST['tipeKamar'];
     //roomPrice
     if(strcmp($this->roomType, 'Executive Suite 1') == 0):
@@ -27,7 +27,7 @@ class Up{
     else:
       $this->roomPrice = 0;
     endif;
-    $this->roomStatus = 0;
+    $this->roomStatus = 10;
 
   }
 
@@ -35,9 +35,9 @@ class Up{
   public function update(){
     $this->db = new DB;
     $db = $this->db->query();
-    $sql = "UPDATE noKamar = '$_POST['nomorKamar']', hargaKamar, tipeKamar, statusKamar FROM room WHERE noKamar = '$this->roomNum'";
+    $sql = "UPDATE room SET hargaKamar = '$this->roomPrice', tipeKamar = '$this->roomType', statusKamar = '$this->roomStatus' WHERE noKamar = '$this->roomNum'";
     $result = mysqli_query($db,$sql);
-    header('location: room_data.php');
+    // header('location: room_data.php');
   }
 }
 

@@ -106,6 +106,8 @@
                                             <option>4</option>
                                           </select>
                                         </div>
+                                        <?php echo $_SESSION['user_id'];?>
+                                        <input type="hidden" name="idGuest" value="<?php echo $_SESSION['user_id'];  ?>"></input>
                                         <a class="button2" onclick="document.getElementById('ContactForm').submit()">Send</a>
                                         <a href="javascript:" class="button2" onclick="document.getElementById('ContactForm').reset()">Clear</a>
                                     </div>
