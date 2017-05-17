@@ -10,17 +10,26 @@
     <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
     <link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
-    <script type="text/javascript" src="js/jquery-1.6.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <!--    <script type="text/javascript" src="js/jquery-1.6.js"></script>-->
     <script type="text/javascript" src="js/cufon-yui.js"></script>
     <script type="text/javascript" src="js/cufon-replace.js"></script>
     <script type="text/javascript" src="js/Adamina_400.font.js"></script>
-    <script type="text/javascript" src="js/jquery.jqtransform.js"></script>
+<!--    <script type="text/javascript" src="js/jquery.jqtransform.js"></script>-->
     <script type="text/javascript" src="js/script.js"></script>
-    <script type="text/javascript" src="js/atooltip.jquery.js"></script>
+<!--    <script type="text/javascript" src="js/atooltip.jquery.js"></script>-->
     <!--[if lt IE 9]>
 <script type="text/javascript" src="js/html5.js"></script>
 <link rel="stylesheet" href="css/ie.css" type="text/css" media="all">
 <![endif]-->
+    <script>
+        $(function() {
+            $("#dateIn").datepicker();
+            $("#dateOut").datepicker();
+        });
+    </script>
 </head>
 
 <body id="page3">
@@ -52,50 +61,38 @@
                                     <h2>Book a Room</h2>
                                     <fieldset>
                                         <div class="row">
-                                            <input type="text" class="input"> Your Name: </div>
+                                           Cek-in: <input type="text" name="datein" id="dateIn">  </div>
                                         <div class="row">
-                                            <input type="text" class="input"> E-Mail Address: </div>
+                                           Cek-out:  <input type="text" name="dateout" id="dateOut"></div>
                                         <div class="row">
-                                            <input type="text" class="input"> Home Phone: </div>
+                                           Tipe Kamar : 
+                                           
+                                                 
+                                                <select id="roomsearch" name="rooms">
+                                                   
+                                                    <option disabled="disabled" value="">Tipe Kamar...</option>
+                                                    <option>Executive Suite 1</option>
+                                                    <option>Executive Suite 2</option>
+                                                    <option>Executive </option>
+                                                    <option>Executive Cottage</option>
+                                                    <option>Deluxe</option>
+                                                    <option>Bussiness Standart</option>
+                                                 </select>
+                                          
+                                    </div>
                                         <div class="row">
-                                            <div class="select1">
-                                                <select>
-                        <option>&nbsp;</option>
-                        <option>...</option>
-                      </select>
-                                            </div>
-                                            Length of Stay: </div>
-                                        <div class="row">
-                                            <div class="select1">
-                                                <select>
-                        <option>&nbsp;</option>
-                        <option>...</option>
-                      </select>
-                                            </div>
-                                            Number in Party: </div>
-                                        <div class="row">
-                                            <div class="select2">
-                                                <select>
-                        <option>&nbsp;</option>
-                        <option>...</option>
-                      </select>
-                                            </div>
-                                            <div class="select2">
-                                                <select>
-                        <option>&nbsp;</option>
-                        <option>...</option>
-                      </select>
-                                            </div>
-                                            <div class="select2">
-                                                <select>
-                        <option>&nbsp;</option>
-                        <option>...</option>
-                      </select>
-                                            </div>
-                                            Arrival Date: </div>
-                                        <div class="row_textarea"> Additional Comments:
-                                            <textarea cols="1" rows="1"></textarea>
-                                        </div>
+                                             Jumlah Kamar : 
+                                            
+                                               
+                                                <select name="jumlah">
+                                                    <option disabled="disabled" value="">Jumlah Kamar...</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                </select>
+                                      
+                                      </div>
                                         <div class="wrapper"> <a href="#" class="button1">Send</a> <a href="#" class="button1">Clear</a> </div>
                                     </fieldset>
                                 </form>
@@ -168,17 +165,17 @@
                             <div class="wrapper line3">
                                 <div class="col2">
                                     <h2>Reservasi Gedung Kartika</h2>
-                                        Untuk melakukan reservasi Gedung Kartika maupun reservasi paket acara harus dilakukan langsung ditempat, silahkan hubungi atau datang ke hotel kusuma kartika sari.
-                             </div>
+                                    Untuk melakukan reservasi Gedung Kartika maupun reservasi paket acara harus dilakukan langsung ditempat, silahkan hubungi atau datang ke hotel kusuma kartika sari.
+                                </div>
                                 <div class="col1 pad_left1">
                                     <h2>Booking Info</h2>
-                                     <p class="pad_bot1"><strong class="color2">Jl. Ir. Sutami 63 Solo Jawa Tengah - Indonesia </strong></p>
-                                        <br>
-                                        <p> Telp. (0271) 656861 </p>
-                                        <p>Fax (0271) 656862 </p>
-                                        <p>Email: marketing@hotelkusumakartikasari.com</p>
-                                        <a href="contact.php" class="button1">Read More</a>
-                                    </div>
+                                    <p class="pad_bot1"><strong class="color2">Jl. Ir. Sutami 63 Solo Jawa Tengah - Indonesia </strong></p>
+                                    <br>
+                                    <p> Telp. (0271) 656861 </p>
+                                    <p>Fax (0271) 656862 </p>
+                                    <p>Email: marketing@hotelkusumakartikasari.com</p>
+                                    <a href="contact.php" class="button1">Read More</a>
+                                </div>
                             </div>
                         </div>
                     </article>
@@ -229,4 +226,5 @@
 </body>
 
 </html>
+
 </html>

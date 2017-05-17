@@ -18,7 +18,7 @@ mark, rp, rt, ruby, summary, time {
 }
 
 #sukses{
-   padding-top: -100px;    
+   padding-top: -100px;
 }
 
 
@@ -129,7 +129,7 @@ header {
 	color:#72716f;
 	text-align:right;
 }
-	
+
 .sukses > a:hover{
     color:white;
 }
@@ -183,19 +183,20 @@ header {
 	border-radius:1px;
 	-moz-border-radius:1px;
 	-webkit-border-radius:1px;
-	text-decoration:none
+	text-decoration:none;
 }
 .button2 {
 	background:#12110f;
 	color:#fff;
-	padding:0 22px
+	padding:0 22px;
 }
 .button1:hover {
 	background:#2a2824;
-	color:#72716f
+	color:#72716f;
 }
 .button2:hover {
-	background:#f3b21d
+	background:#f3b21d;
+	cursor:pointer;
 }
 /* =========== kwiks slider ========= */
 .kwicks-wrapper {
@@ -343,6 +344,31 @@ footer a:hover {
 	padding:0
 }
 /* ============================= forms ============================= */
+
+.formorder{
+    margin: 100px;
+}
+#tanggalin{
+    margin-left: 199px;
+    color: #72716f;
+    border: 1px solid #f2f2f2;
+}
+#tanggalout{
+    margin-left: 192px;
+    color: #72716f;
+    border: 1px solid #f2f2f2;
+}
+#pilihan{
+    margin-left: 185px;
+    color: #72716f;
+    border: 1px solid #f2f2f2;
+}
+#pilihan2{
+    margin-left: 170px;
+    width: 50px;
+    color: #72716f;
+    border: 1px solid #f2f2f2;
+}
 #ContactForm {
 	padding:0 10px 0 0;
 	margin-top:-2px
@@ -395,25 +421,46 @@ footer a:hover {
 	color:#fff
 }
 #form1 .right {
-	width:140px
+	width:160px
 }
 #form1 .row {
-	height:30px;
+	height:35px;
 	line-height:22px
 }
+/*
 #form1 .row_textarea {
 	height:102px;
 	line-height:22px
 }
-#form1 .input {
+*/
+#form1 input {
 	font:12px Arial, Helvetica, sans-serif;
 	color:#72716f;
 	background:none;
-	height:15px;
+	height:18px;
 	padding:3px 5px;
 	width:128px;
-	margin:0
+    border: 1px solid #f2f2f2;   
 }
+#dateIn{
+    margin-left: 48px;
+}
+#dateOut{
+    margin-left: 41px;
+}
+#form1 select {
+	font:12px Arial, Helvetica, sans-serif;
+	color:#72716f;
+	background:none;
+	height:25px;
+	padding:3px 5px;
+	width:128px;
+    border: 1px solid #f2f2f2;
+}
+#roomsearch{
+    margin-left: 17px;
+}
+/*
 #form1 textarea {
 	font:12px Arial, Helvetica, sans-serif;
 	color:#72716f;
@@ -423,6 +470,7 @@ footer a:hover {
 	width:222px;
 	margin:0;
 	overflow:auto
+*/
 }
 /* -------------
  * Hidden - used to hide the original form elements
@@ -532,5 +580,3 @@ a.jqTransformSelectOpen {
 	margin-left:4px;
 	padding:0 19px
 }
-
-

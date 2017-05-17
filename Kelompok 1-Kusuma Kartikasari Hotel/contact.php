@@ -1,4 +1,26 @@
-<?php require_once 'session.php'; ?>
+<?php
+  require_once 'session.php';
+  $message ='';
+  require 'database.php';
+  if (!empty($_POST['nama'])):
+        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+        $sql = "INSERT INTO pesan (nama, alamat, email, pesan) VALUES (:nama, :alamat, :email, :pesan)";
+
+        $stmt = $conn->prepare($sql);
+
+        $stmt->bindParam(':nama', $_POST['nama']);
+        $stmt->bindParam(':alamat', $_POST['alamat']);
+        $stmt->bindParam(':email', $_POST['email']);
+        $stmt->bindParam(':pesan', $_POST['pesan']);
+
+        if( $stmt->execute() ):
+          $message = 'Pesan telah terkirim';
+        else:
+          $message = 'Pesan tidak terkirim';
+        endif;
+
+    endif;
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,17 +31,27 @@
     <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
     <link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
-    <script type="text/javascript" src="js/jquery-1.6.js"></script>
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<!--    <script type="text/javascript" src="js/jquery-1.6.js"></script>-->
     <script type="text/javascript" src="js/cufon-yui.js"></script>
     <script type="text/javascript" src="js/cufon-replace.js"></script>
     <script type="text/javascript" src="js/Adamina_400.font.js"></script>
-    <script type="text/javascript" src="js/jquery.jqtransform.js"></script>
+<!--    <script type="text/javascript" src="js/jquery.jqtransform.js"></script>-->
     <script type="text/javascript" src="js/script.js"></script>
-    <script type="text/javascript" src="js/atooltip.jquery.js"></script>
+<!--    <script type="text/javascript" src="js/atooltip.jquery.js"></script>-->
     <!--[if lt IE 9]>
 <script type="text/javascript" src="js/html5.js"></script>
 <link rel="stylesheet" href="css/ie.css" type="text/css" media="all">
 <![endif]-->
+
+<script>
+        $(function() {
+            $("#datein").datepicker();
+            $("#dateout").datepicker();
+        });
+    </script>
 </head>
 
 <body id="page5">
@@ -51,50 +83,38 @@
                                     <h2>Book a Room</h2>
                                     <fieldset>
                                         <div class="row">
-                                            <input type="text" class="input"> Your Name: </div>
+                                           Cek-in: <input type="text" name="datein" id="dateIn">  </div>
                                         <div class="row">
-                                            <input type="text" class="input"> E-Mail Address: </div>
+                                           Cek-out:  <input type="text" name="dateout" id="dateOut"></div>
                                         <div class="row">
-                                            <input type="text" class="input"> Home Phone: </div>
+                                           Tipe Kamar : 
+                                           
+                                                 
+                                                <select id="roomsearch" name="rooms">
+                                                   
+                                                    <option disabled="disabled" value="">Tipe Kamar...</option>
+                                                    <option>Executive Suite 1</option>
+                                                    <option>Executive Suite 2</option>
+                                                    <option>Executive </option>
+                                                    <option>Executive Cottage</option>
+                                                    <option>Deluxe</option>
+                                                    <option>Bussiness Standart</option>
+                                                 </select>
+                                          
+                                    </div>
                                         <div class="row">
-                                            <div class="select1">
-                                                <select>
-                        <option>&nbsp;</option>
-                        <option>...</option>
-                      </select>
-                                            </div>
-                                            Length of Stay: </div>
-                                        <div class="row">
-                                            <div class="select1">
-                                                <select>
-                        <option>&nbsp;</option>
-                        <option>...</option>
-                      </select>
-                                            </div>
-                                            Number in Party: </div>
-                                        <div class="row">
-                                            <div class="select2">
-                                                <select>
-                        <option>&nbsp;</option>
-                        <option>...</option>
-                      </select>
-                                            </div>
-                                            <div class="select2">
-                                                <select>
-                        <option>&nbsp;</option>
-                        <option>...</option>
-                      </select>
-                                            </div>
-                                            <div class="select2">
-                                                <select>
-                        <option>&nbsp;</option>
-                        <option>...</option>
-                      </select>
-                                            </div>
-                                            Arrival Date: </div>
-                                        <div class="row_textarea"> Additional Comments:
-                                            <textarea cols="1" rows="1"></textarea>
-                                        </div>
+                                             Jumlah Kamar : 
+                                            
+                                               
+                                                <select name="jumlah">
+                                                    <option disabled="disabled" value="">Jumlah Kamar...</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                </select>
+                                      
+                                      </div>
                                         <div class="wrapper"> <a href="#" class="button1">Send</a> <a href="#" class="button1">Clear</a> </div>
                                     </fieldset>
                                 </form>
@@ -110,17 +130,19 @@
                                         <li> </li>
                                     </ul>
                                     <h2>Contact Form :</h2>
-                                    <form id="ContactForm" action="#">
+                                    <form id="ContactForm" action="contact.php" method="POST">
                                         <div>
                                             <div class="wrapper">
-                                                <input type="text" class="input"> Name: </div>
+                                                <input type="text" class="input" name="nama"> Name: </div>
                                             <div class="wrapper">
-                                                <input type="text" class="input"> Address: </div>
+                                                <input type="text" class="input" name="alamat"> Address: </div>
                                             <div class="wrapper">
-                                                <input type="text" class="input"> Email: </div>
+                                                <input type="text" class="input" name="email"> Email: </div>
                                             <div class="textarea_box">
-                                                <textarea name="textarea" cols="1" rows="1"></textarea> Contacts: </div>
-                                            <a href="#" class="button2">Send</a> <a href="#" class="button2">Clear</a> </div>
+                                                <textarea class="input" cols="1" rows="1" name="pesan"></textarea> Message: </div>
+                                            <a href="#" class="button2" onclick="document.getElementById('ContactForm').submit()">Send</a>
+                                            <a href="javascript:" class="button2" onclick="document.getElementById('ContactForm').reset()">Clear</a>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
