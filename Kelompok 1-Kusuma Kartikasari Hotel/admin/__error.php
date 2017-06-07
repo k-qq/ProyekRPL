@@ -34,6 +34,9 @@
     public function getRoomType(){
       return $this->roomType;
     }
+
+
+
   }
 
 
@@ -41,20 +44,20 @@
   $obj = new UpdateRoom();
   $obj->read();
 
-?>
-<?php include 'include/header.php';?>
-<form action="updateRoom.php" method="POST">
+echo '
+
+<form action="update_room.php?id='.$obj->returnnoKamar().'" method="post">
   <table>
     <tr>
       <td> No Kamar </td>
-      <td><input type="text" disabled="disable" name="noKamar" placeholder="Contoh 111" value="<?php   $obj = new UpdateRoom(); echo $obj->returnnoKamar();?>">
+      <td><input type="text" disabled="disable" name="nomor" placeholder="Contoh 111" value="'.$obj->returnnoKamar().'">
  </td>
     </tr>
 
       <tr>
         <td> Tipe Kamar </td>
 
-        <td> <select name="tipeKamar" values="<?php $object = new UpdateRoom();  echo $object->getRoomType(); ?>" required>
+        <td> <select name="tipe" values="'.$obj->getRoomType().'" required>
           <option value="Executive Suite 1">Executive Suite 1</option>
           <option value="Executive Suite">Executive Suite</option>
           <option value="Executive">Executive</option>
@@ -65,6 +68,35 @@
       </tr>
   </table>
 
-  <?php $_POST['noKamar'] = $obj->returnnoKamar();?>
-  <input type="submit" value="Update">
+  <input type="submit" name="submit" value="Update">
 </form>
+';
+if(isset($_GET['submit'])){
+  $this->roomNum = $_GET['nomor'];
+  $this->roomType = $_GET['tipeKamar'];
+  //roomPrice
+  if(strcmp($this->roomType, 'Executive Suite 1') == 0):
+    $this->roomPrice = 550000;
+  elseif(strcmp($this->roomType, 'Executive Suite') == 0):
+    $this->roomPrice = 385000;
+  elseif(strcmp($this->roomType, 'Executive') == 0):
+    $this->roomPrice = 275000;
+  elseif(strcmp($this->roomType, 'Executive Cottage') == 0):
+    $this->roomPrice = 250000;
+  elseif(strcmp($this->roomType, 'Deluxe') == 0):
+    $this->roomPrice = 200000;
+  elseif(strcmp($this->roomType, 'Bussines Standard') == 0):
+    $this->roomPrice = 175000;
+  else:
+    $this->roomPrice = 0;
+  endif;
+  $this->roomStatus = 10;
+
+  $sql = "UPDATE room SET hargaKamar = '$this->roomPrice', tipeKamar = '$this->roomType', statusKamar = '$this->roomStatus' WHERE noKamar = '$this->roomNum'";
+  $result = mysqli_query($db,$sql);
+  if(!$result){
+    echo $sql;
+    echo "Error Updating Room";
+  }
+  header ('location: room_data.php');
+}

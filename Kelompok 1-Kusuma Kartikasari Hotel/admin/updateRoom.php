@@ -2,6 +2,12 @@
 
 include 'include/database.php';
 
+if(!isset($_GET['noKamar'])){
+  echo 'gas';
+}else{
+  echo 'get';
+}
+
 class Up{
   protected $roomNum;
   protected $roomType;

@@ -61,14 +61,21 @@ if(!isset($_SESSION['admin_id']) ){
           class Message{
 
             protected $header = '<table style="margin-left: 400px;" border=1>
-              <tr>
-                <th>No</th>
-                <th>Nama</th>
-                <th>Alamat</th>
-                <th>Email</th>
-                <th>Pesan</th>
-                <th>Hapus</th>
-              </tr>';
+               <tr>
+                <th>idOrder</th>
+                <th>idGuest</th>
+                <th>nama</th>
+                <th>Tanggal CheckIN</th>
+                <th>Tanggal CheckOUT</th>
+	                <th>Tipe Kamar</th>
+	                <th>No KTP</th>
+	                <th>Alamat</th>
+	                <th>Negara</th>
+	                <th>Kode Pos</th>
+	                <th>No Telp</th>
+									<th>Email</th>
+
+              </tr> ';
 
             protected $body = '';
 
@@ -81,20 +88,27 @@ if(!isset($_SESSION['admin_id']) ){
             public function IncomingMessage(){
               $this->db = new DB;
         			$db = $this->db->query();
-        			$sql = "SELECT idPesan, nama, alamat, email, pesan FROM pesan";
+        			$sql = "SELECT order1.idOrder, idGuest, nama, check_in, check_out, tipeKamar, noId, alamat, negara, kodePos, noTelp, email FROM order1 INNER JOIN order2 ON order1.idOrder = order2.idOrder ORDER BY order1.idOrder ASC";
         			$result = mysqli_query($db,$sql);
 
-              $number = 1;
+              // $number = 1;
               while($data = mysqli_fetch_array($result,MYSQLI_ASSOC)){
-                $this->body.=  '<tr>
-                    <td>'.$number.'</td>
-                    <td>'.$data['nama'].'</td>
+                $this->body.=
+								'<tr>
+								<td>'.$data['idOrder'].'</td>
+								<td>'.$data['idGuest'].'</td>
+								<td>'.$data['nama'].'</td>
+								<td>'.$data['check_in'].'</td>
+									<td>'.$data['check_out'].'</td>
+									<td>'.$data['tipeKamar'].'</td>
+                    <td>'.$data['noId'].'</td>
                     <td>'.$data['alamat'].'</td>
-                    <td>'.$data['email'].'</td>
-                    <td>'.$data['pesan'].'</td>
-                    <td><a href="delete_message.php?id='.$data['idPesan'].'" onclick="return confirm(\'Apakah anda yakin ingin menghapus?\')"> <span class="glyphicon glyphicon-remove"></span> </a></td>
+										<td>'.$data['negara'].'</td>
+	                    <td>'.$data['kodePos'].'</td>
+											<td>'.$data['noTelp'].'</td>
+	                    <td>'.$data['email'].'</td>
                   </tr>';
-                  $number++;
+                  // $number++;
               }
 
               echo $this->header.$this->body.$this->footer;
